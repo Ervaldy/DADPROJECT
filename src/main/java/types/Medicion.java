@@ -128,4 +128,21 @@ public class Medicion {
 		this.fecha = 0;
 		
 	}
+	public Medicion(int id_sensor, int id_aula, double ruido, double co2, double humedad, double temperatura, long fecha) {
+		this.id_medicion = 0;
+		this.id_sensor = id_sensor;
+		this.id_aula = id_aula;
+		this.ruido = ruido;
+		this.co2 = co2;
+		this.humedad = 0;
+		this.temperatura = 0;
+		this.fecha = 0;
+		
+	}
+	@Override
+	public String toString() {
+		return "Medicion [id_medicion=" + id_medicion + ", id_sensor=" + id_sensor + ", id_aula=" + id_aula + ", ruido="
+				+ ruido + ", co2=" + co2 + ", humedad=" + humedad + ", temperatura=" + temperatura + ", fecha=" + fecha
+				+ "]";
+	}
 }
