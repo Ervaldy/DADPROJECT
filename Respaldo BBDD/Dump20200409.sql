@@ -27,7 +27,7 @@ CREATE TABLE `actuaciones` (
   `id_medicion` int NOT NULL,
   PRIMARY KEY (`id_actuacion`),
   KEY `id_medicion_idx` (`id_medicion`),
-  CONSTRAINT `id_medicion` FOREIGN KEY (`id_medicion`) REFERENCES `mediciones` (`id_medicion`)
+  CONSTRAINT `id_medicion` FOREIGN KEY (`id_medicion`) REFERENCES `mediciones` (`id_medicion`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -37,7 +37,7 @@ CREATE TABLE `actuaciones` (
 
 LOCK TABLES `actuaciones` WRITE;
 /*!40000 ALTER TABLE `actuaciones` DISABLE KEYS */;
-INSERT INTO `actuaciones` VALUES (1,3),(2,4),(3,10);
+INSERT INTO `actuaciones` VALUES (1,3);
 /*!40000 ALTER TABLE `actuaciones` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -61,7 +61,7 @@ CREATE TABLE `aulas` (
 
 LOCK TABLES `aulas` WRITE;
 /*!40000 ALTER TABLE `aulas` DISABLE KEYS */;
-INSERT INTO `aulas` VALUES (1,'A4.14'),(2,'A2.14'),(3,'I1.10'),(4,'F0.34'),(5,'A2.11');
+INSERT INTO `aulas` VALUES (1,'A4.14'),(2,'A2.14'),(3,'I1.10'),(4,'F0.34');
 /*!40000 ALTER TABLE `aulas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -84,7 +84,7 @@ CREATE TABLE `mediciones` (
   PRIMARY KEY (`id_medicion`),
   KEY `id_sensor_idx` (`id_sensor`),
   KEY `id_aula_idx` (`id_aula`),
-  CONSTRAINT `id_aula` FOREIGN KEY (`id_aula`) REFERENCES `aulas` (`id_aula`),
+  CONSTRAINT `id_aula` FOREIGN KEY (`id_aula`) REFERENCES `aulas` (`id_aula`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `id_sensor` FOREIGN KEY (`id_sensor`) REFERENCES `sensores` (`id_sensor`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -95,7 +95,7 @@ CREATE TABLE `mediciones` (
 
 LOCK TABLES `mediciones` WRITE;
 /*!40000 ALTER TABLE `mediciones` DISABLE KEYS */;
-INSERT INTO `mediciones` VALUES (1,1,2,50,100,5,23,1585155591),(2,1,2,67,150,7,23.5,1585155598),(3,2,4,89,113,10,38,1585155591),(4,2,4,75,123,12,40,1585155598),(5,3,1,60,143,4,24.3,1585155591),(6,3,1,78,156,3,24,1585155598),(7,4,2,43,175,6,25,1585155591),(8,4,2,47,181,8,26,1585155598),(9,5,3,55,200,9,25,1585155591),(10,5,3,60,210,7,24,1585155598),(11,2,4,89,113,10,38,1585155691);
+INSERT INTO `mediciones` VALUES (1,1,2,50,100,5,23,1585155591),(3,2,4,89,113,10,38,1585155591),(4,2,4,75,123,12,40,1585155598),(6,3,1,78,156,3,24,1585155598),(7,4,2,43,175,6,25,1585155591),(8,4,2,47,181,8,26,1585155598),(9,5,3,55,200,9,25,1585155591);
 /*!40000 ALTER TABLE `mediciones` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -119,7 +119,7 @@ CREATE TABLE `sensores` (
 
 LOCK TABLES `sensores` WRITE;
 /*!40000 ALTER TABLE `sensores` DISABLE KEYS */;
-INSERT INTO `sensores` VALUES (1,'s1_A2.14'),(2,'s_F0.34'),(3,'s_A4.14'),(4,'s2_A2.14'),(5,'s_I1.10'),(6,'s_A2.11');
+INSERT INTO `sensores` VALUES (1,'s1_A2.14'),(2,'s_F0.34'),(3,'s_A4.14'),(4,'s2_A2.14'),(5,'s_I1.10');
 /*!40000 ALTER TABLE `sensores` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -144,7 +144,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Josvalcas1','00000'),(2,'Javvazbla','11111'),(3,'Enrpieven','22222'),(4,'Juan','123456');
+INSERT INTO `usuarios` VALUES (1,'Josvalcas1','00000'),(2,'Javvazbla','11111'),(3,'Enrpieven','22222');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -157,4 +157,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-04-08 13:26:39
+-- Dump completed on 2020-04-09 12:52:32

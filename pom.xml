@@ -22,7 +22,7 @@
       <artifactId>vertx-mysql-client</artifactId>
       <version>3.8.5</version>
     </dependency>
-    
+  
    </dependencies>
  
 </project>

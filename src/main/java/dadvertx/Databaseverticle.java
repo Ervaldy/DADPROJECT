@@ -1,6 +1,8 @@
 package dadvertx;
 
 
+
+
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Promise;
 import io.vertx.core.json.Json;
@@ -307,6 +309,102 @@ public class Databaseverticle extends AbstractVerticle{
 				});
 	}
 	
+	private void deleteMedicion(RoutingContext routingcontext) {
+		mysqlpool.preparedQuery("DELETE FROM daddb.mediciones WHERE id_medicion = " + routingcontext
+				.request().getParam("id_medicion"), res ->{
+					if(res.succeeded()) {
+						routingcontext.response().setStatusCode(200).putHeader("content-type", "application/json")
+						.end("{\"respuesta\": \"Eliminada una medicion\"}");
+						
+					}else {
+						System.out.println(res.cause().toString());
+						routingcontext.response().setStatusCode(401).putHeader("content-type", "application/json")
+						.end(JsonObject.mapFrom(res.cause()).encodePrettily());
+					}
+				});
+		
+	}
+	
+	private void deleteMedicionActual(RoutingContext routingcontext) {
+		mysqlpool.preparedQuery(" DELETE FROM daddb.mediciones WHERE id_aula =" + routingcontext.request() 
+					.getParam("id_aula") + " ORDER BY fecha DESC LIMIT 1", res ->{
+					if(res.succeeded()) {
+						routingcontext.response().setStatusCode(200).putHeader("content-type", "application/json")
+						.end("{\"respuesta\": \"Eliminada una medicion\"}");
+						
+					}else {
+						System.out.println(res.cause().toString());
+						routingcontext.response().setStatusCode(401).putHeader("content-type", "application/json")
+						.end(JsonObject.mapFrom(res.cause()).encodePrettily());
+					}
+				});
+		
+	}
+	private void deleteAula(RoutingContext routingcontext) {
+		mysqlpool.preparedQuery("DELETE FROM daddb.aulas WHERE id_aula = " + routingcontext
+				.request().getParam("id_aula"), res ->{
+					if(res.succeeded()) {
+						routingcontext.response().setStatusCode(200).putHeader("content-type", "application/json")
+						.end("{\"respuesta\": \"Eliminada un aula\"}");
+						
+					}else {
+						System.out.println(res.cause().toString());
+						routingcontext.response().setStatusCode(401).putHeader("content-type", "application/json")
+						.end(JsonObject.mapFrom(res.cause()).encodePrettily());
+					}
+				});
+		
+	}
+	private void deleteSensor(RoutingContext routingcontext) {
+		mysqlpool.preparedQuery("DELETE FROM daddb.sensores WHERE id_sensor = " + routingcontext
+				.request().getParam("id_sensor"), res ->{
+					if(res.succeeded()) {
+						routingcontext.response().setStatusCode(200).putHeader("content-type", "application/json")
+						.end("{\"respuesta\": \"Eliminado un sensor\"}");
+						
+					}else {
+						System.out.println(res.cause().toString());
+						routingcontext.response().setStatusCode(401).putHeader("content-type", "application/json")
+						.end(JsonObject.mapFrom(res.cause()).encodePrettily());
+					}
+				});
+		
+	}
+	private void deleteActuacion(RoutingContext routingcontext) {
+		mysqlpool.preparedQuery("DELETE FROM daddb.actuaciones WHERE id_actuacion = " + routingcontext
+				.request().getParam("id_actuacion"), res ->{
+					if(res.succeeded()) {
+						routingcontext.response().setStatusCode(200).putHeader("content-type", "application/json")
+						.end("{\"respuesta\": \"Eliminada una actuacion\"}");
+						
+					}else {
+						System.out.println(res.cause().toString());
+						routingcontext.response().setStatusCode(401).putHeader("content-type", "application/json")
+						.end(JsonObject.mapFrom(res.cause()).encodePrettily());
+					}
+				});
+		
+	}
+	private void deleteUsuario(RoutingContext routingcontext) {
+		mysqlpool.preparedQuery("DELETE FROM daddb.usuarios WHERE id_usuario = " + routingcontext
+				.request().getParam("id_usuario"), res ->{
+					if(res.succeeded()) {
+						routingcontext.response().setStatusCode(200).putHeader("content-type", "application/json")
+						.end("{\"respuesta\": \"Eliminado un usuario\"}");
+						
+					}else {
+						System.out.println(res.cause().toString());
+						routingcontext.response().setStatusCode(401).putHeader("content-type", "application/json")
+						.end(JsonObject.mapFrom(res.cause()).encodePrettily());
+					}
+				});
+		
+	}
+	
+	
+	
+	
+	
 	public void start(Promise<Void> startPromise) {
 		MySQLConnectOptions mysqlconnectoptions = new MySQLConnectOptions().setPort(3306).setHost("localhost")
 				.setDatabase("daddb").setUser("root").setPassword("PARADAD");
@@ -335,6 +433,13 @@ public class Databaseverticle extends AbstractVerticle{
 		router.put("/sensor").handler(this::putSensor);
 		router.put("/actuacion").handler(this::putActuacion);
 		router.put("/usuario").handler(this::putUsuario);
+		router.delete("/medicion/:id_medicion").handler(this::deleteMedicion);
+		router.delete("/medicion/actual/:id_aula").handler(this::deleteMedicionActual);
+		router.delete("/aula/:id_aula").handler(this::deleteAula);
+		router.delete("/sensor/:id_sensor").handler(this::deleteSensor);
+		router.delete("/actuacion/:id_actuacion").handler(this::deleteActuacion);
+		router.delete("/usuario/:id_usuario").handler(this::deleteUsuario);
+		
 	}
 
 }
