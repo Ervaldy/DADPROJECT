@@ -3,14 +3,20 @@
   <groupId>dad.us</groupId>
   <artifactId>dadvertx</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+
   <dependencies>
-   <!-- https://mvnrepository,com/artifact/io.vertx-core -->
+   <!-- https://mvnrepository.com/artifact/io.vertx-core -->
    <dependency>
      <groupId>io.vertx</groupId>
      <artifactId>vertx-core</artifactId>
      <version>3.8.5</version>
    </dependency>
-    
+    <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+<dependency>
+    <groupId>com.google.guava</groupId>
+    <artifactId>guava</artifactId>
+    <version>29.0-jre</version>
+</dependency>
     <dependency>
     <groupId>io.vertx</groupId>
     <artifactId>vertx-web</artifactId>
@@ -22,6 +28,14 @@
       <artifactId>vertx-mysql-client</artifactId>
       <version>3.8.5</version>
     </dependency>
+  
+   <dependency>
+      <groupId>io.vertx</groupId>
+      <artifactId>vertx-mqtt</artifactId>
+      <version>3.8.5</version>
+    </dependency>
+
+  
   
    </dependencies>
  
