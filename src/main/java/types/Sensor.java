@@ -47,6 +47,11 @@ public class Sensor {
 		this.id_sensor = id_sensor;
 		this.nombre = nombre;
 	}
+	public Sensor(String nombre) {
+		super();
+		this.id_sensor = (Integer) null;
+		this.nombre = nombre;
+	}
 	public Sensor() {
 		super();
 		this.id_sensor = 0;

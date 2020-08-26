@@ -1,0 +1,160 @@
+<!doctype html>
+
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+			
+		<title>Panel de administración - AulaCare</title>
+			  
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="/web/css/style.css">
+		<link rel="stylesheet" href="/web/css/administracion.css">
+		<link rel="icon" href="/web/img/favicon"/>
+		
+		<script src="/web/js/administracion.js"></script>
+		
+	</head>
+
+	<body>
+		<section id = "container" class="container">
+	  	
+			<section id ="cabecera">
+				<a href="http://localhost:8080/web/"><h2>AulaCare</h2></a>
+			</section>
+	  	
+			<section id ="panel-admin-main">
+	  	  		<h3>Login correcto</h3>
+				<p>Panel de administracion</a></p>
+				
+				<div class="tabbable"> 
+				  <ul class="nav nav-tabs">
+				    <li class="active"><a href="#tab1" data-toggle="tab">Mediciones</a></li>
+				    <li><a href="#tab2" data-toggle="tab">Actuaciones</a></li>
+				    <li><a href="#tab3" data-toggle="tab">Aulas</a></li>
+				    <li><a href="#tab4" data-toggle="tab">Usuarios</a></li>
+				    <li><a href="#tab5" data-toggle="tab">Sensores</a></li>
+				  </ul>
+				  <div class="tab-content">
+				    <div class="tab-pane active" id="tab1">
+				      <h3>Administración de mediciones</h3>
+				      <table class="info-admin-table-mediciones">
+				      	<thead>
+				      		<tr>
+				      			<td>Aula</td>
+				      			<td>Fecha</td>
+				      			<td>Temperatura</td>
+				      			<td>Humedad</td>
+				      			<td>Índice de bochorno</td>
+				      			<td>Ruido</td>
+				      			<td>Borrar</td>
+				      		</tr>
+				      	</thead>
+				      	<tbody>
+				      		
+				      	</tbody>
+				      </table>
+				    </div>
+				    <div class="tab-pane" id="tab2">
+				      <h3>Administración de actuaciones</h3>
+				      <table class="info-admin-table-actuaciones">
+				      	<thead>
+				      		<tr>
+				      			<td>Aula</td>
+				      			<td>Fecha</td>
+				      			<td>Temperatura</td>
+				      			<td>Humedad</td>
+				      			<td>Índice de bochorno</td>
+				      			<td>Ruido</td>
+				      			<td>Borrar</td>
+				      		</tr>
+				      	</thead>
+				      	<tbody>
+				      		
+				      	</tbody>
+				      </table>
+				    </div>
+				    <div class="tab-pane" id="tab3">
+				      <h3>Administración de aulas</h3>
+				      <table class="info-admin-table-aulas">
+				      	<thead>
+				      		<tr>
+				      			<td>Id</td>
+				      			<td>Nombre</td>
+				      			<td>Petición pendiente</td>
+				      			<td>Editar</td>
+				      			<td>Borrar</td>
+				      		</tr>
+				      	</thead>
+				      	<tbody>
+				      		
+				      	</tbody>
+				      </table>
+				      
+				      <h3>Nueva aula</h3>
+				      <input class="form-control" id="nombre-nueva-aula" placeholder="Nombre de nueva aula"></input>
+				      <button id="carga-nueva-aula" class="btn btn-success" >Nueva aula</button>
+				      
+				    </div>
+				     <div class="tab-pane" id="tab4">
+				      <h3>Administración de usuarios</h3>
+				      <table class="info-admin-table-usuarios">
+				      	<thead>
+				      		<tr>
+				      			<td>Nombre</td>
+				      			<td>Contraseña</td>
+				      			<td>Editar</td>
+				      			<td>Borrar</td>
+				      		</tr>
+				      	</thead>
+				      	<tbody>
+				      		
+				      	</tbody>
+				      </table>
+				      
+				      <h3>Nuevo usuario</h3>
+				      <input class="form-control" id="nombre-nuevo-usuario" placeholder="Nombre de nuevo usuario"></input>
+				      <input class="form-control" id="password-nuevo-usuario" placeholder="Contraseña de nuevo usuario"></input>
+				      <button id="carga-nuevo-usuario" class="btn btn-success" >Nuevo usuario</button>
+				    </div>
+				    <div class="tab-pane" id="tab5">
+				    	<h3>Administración de sensores</h3>
+				    	
+				    	<table class="info-admin-table-sensores">
+				      	<thead>
+				      		<tr>
+				      			<td>Id</td>
+				      			<td>Nombre</td>
+				      			<td>Editar</td>
+				      			<td>Borrar</td>
+				      		</tr>
+				      	</thead>
+				      	<tbody>
+				      		
+				      	</tbody>
+				      </table>
+				    
+				    
+				      <h3>Nuevo sensor</h3>
+				      <input class="form-control" id="nombre-nuevo-sensor" placeholder="Nombre de nuevo sensor"></input>
+				      <button id="carga-nuevo-sensor" class="btn btn-success" >Nuevo sensor</button>
+				      
+				    </div>
+				  </div>
+				</div>
+				
+				
+				
+			</section>
+			
+			<section class="footer-web">
+				<p>
+					<a href="http://localhost:8080/web/info">Información</a>
+				</p>
+			</section>
+	  	
+		</section>
+	
+	</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+			
+		<title>Login - AulaCare</title>
+			  
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+		<link rel="stylesheet" href="/web/css/style.css">
+		<link rel="stylesheet" href="/web/css/login.css">
+		<link rel="icon" href="/web/img/favicon"/>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		
+		
+	</head>
+
+	<body>
+		<section id = "container" class="container">
+	  	
+			<section id ="cabecera">
+				<a href="http://localhost:8080/web/"><h2>AulaCare</h2></a>
+				
+			</section>
+	  	
+			<section id ="login">
+	  	  		<h3>Login</h3>
+					<form action="/web/panelAdmin" method="post">
+			  	  		<div>
+				  	  		<label for="uname"><b>Usuario</b></label></br>
+						    <input type="text" placeholder="Introduce usuario" name="uname" id="uname" required>
+						</div>
+						<div>
+						    <label for="psw"><b>Contraseña</b></label></br>
+						    <input type="password" placeholder="Introduce contraseña" name="psw" id="psw" required>
+					    </div>
+						</br>
+					    <button type="submit" onclick="logearse()" class="btn btn-success">Iniciar sesión</button>
+					</form>
+			</section>
+			
+			<section class="footer-web">
+				<p>
+					<a href="http://localhost:8080/web/info">Información</a>
+				</p>
+			</section>
+	  	
+		</section>
+	
+	</body>
+</html>

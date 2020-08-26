@@ -4,7 +4,17 @@ public class Aula {
 
 	private int id_aula;
 	private String nombre;
+	private boolean peticion;
 	
+	public boolean isPeticion() {
+		return peticion;
+	}
+	public void setPeticion(boolean peticion) {
+		this.peticion = peticion;
+	}
+	public boolean getPeticion() {
+		return this.peticion;
+	}
 	public int getId_aula() {
 		return id_aula;
 	}
@@ -43,10 +53,18 @@ public class Aula {
 			return false;
 		return true;
 	}
-	public Aula(int id_aula, String nombre) {
+	public Aula(int id_aula, String nombre, boolean peticion) {
 		super();
 		this.id_aula = id_aula;
 		this.nombre = nombre;
+		this.peticion = peticion;
+	}
+	
+	public Aula(int id_aula, boolean peticion) {
+		super();
+		this.id_aula = id_aula;
+		this.nombre = "";
+		this.peticion = peticion;
 	}
 	public Aula() {
 		super();

@@ -44,6 +44,12 @@ public class Actuacion {
 		this.id_actuacion = id_actuacion;
 		this.id_medicion = id_medicion;
 	}
+	
+	public Actuacion(int id_medicion) {
+		this.id_actuacion = 0;
+		this.id_medicion = id_medicion;
+	}
+	
 	public Actuacion() {
 		super();
 		this.id_actuacion = 0;

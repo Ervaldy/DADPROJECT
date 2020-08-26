@@ -10,6 +10,7 @@ public class Medicion {
 	private double humedad;
 	private double temperatura;
 	private long fecha;
+	private double heatindex;
 	
 	public int getId_medicion() {
 		return id_medicion;
@@ -31,6 +32,12 @@ public class Medicion {
 	}
 	public double getRuido() {
 		return ruido;
+	}
+	public double getHeatindex() {
+		return heatindex;
+	}
+	public void set_heatindex(double heatindex) {
+		this.heatindex = heatindex;
 	}
 	public void setRuido(double ruido) {
 		this.ruido = ruido;
@@ -106,7 +113,7 @@ public class Medicion {
 		return true;
 	}
 	public Medicion(int id_medicion, int id_sensor, int id_aula, double ruido, double co2, double humedad,
-			double temperatura, long fecha) {
+			double temperatura, long fecha, double heatindex) {
 		super();
 		this.id_medicion = id_medicion;
 		this.id_sensor = id_sensor;
@@ -116,6 +123,7 @@ public class Medicion {
 		this.humedad = humedad;
 		this.temperatura = temperatura;
 		this.fecha = fecha;
+		this.heatindex = heatindex;
 	}
 	public Medicion() {
 		this.id_medicion = 0;
@@ -126,7 +134,7 @@ public class Medicion {
 		this.humedad = 0;
 		this.temperatura = 0;
 		this.fecha = 0;
-		
+		this.heatindex = 0;
 	}
 	
 		
@@ -135,6 +143,6 @@ public class Medicion {
 	public String toString() {
 		return "Medicion [id_medicion=" + id_medicion + ", id_sensor=" + id_sensor + ", id_aula=" + id_aula + ", ruido="
 				+ ruido + ", co2=" + co2 + ", humedad=" + humedad + ", temperatura=" + temperatura + ", fecha=" + fecha
-				+ "]";
+				+ ", heat index="+ heatindex+"]";
 	}
 }

@@ -61,6 +61,13 @@ public class Usuario {
 		this.nombre = nombre;
 		this.password = password;
 	}
+	@SuppressWarnings("null")
+	public Usuario(String nombre, String password) {
+		super();
+		this.id_usuario = (Integer) null;
+		this.nombre = nombre;
+		this.password = password;
+	}
 	public Usuario() {
 		super();
 		this.id_usuario = 0;

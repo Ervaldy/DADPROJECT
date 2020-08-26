@@ -1,0 +1,58 @@
+#nombre-nueva-aula, #nombre-nuevo-usuario, 
+#password-nuevo-usuario, #nombre-nuevo-sensor{
+	max-width: 250px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+
+#panel-admin-main{
+	background-color: #e5ffbe;
+	padding: 10px;
+	margin-top: -8px;
+	text-align: center;
+}
+
+.info-admin-table-mediciones, .info-admin-table-actuaciones, 
+.info-admin-table-aulas, .info-admin-table-usuarios, .info-admin-table-sensores{
+	margin: 0 auto;
+}
+
+.info-admin-table-mediciones thead, .info-admin-table-actuaciones thead, 
+.info-admin-table-aulas thead, .info-admin-table-usuarios thead, .info-admin-table-sensores thead{
+	font-weight: bold;
+	background-color: #cff09e;
+}
+
+.info-admin-table-mediciones tbody, .info-admin-table-actuaciones tbody, 
+.info-admin-table-aulas tbody, .info-admin-table-usuarios tbody, .info-admin-table-sensores tbody{
+	background-color: #a6d6bd;
+}
+
+.info-admin-table-mediciones td, .info-admin-table-actuaciones td, 
+.info-admin-table-aulas td, .info-admin-table-usuarios td, .info-admin-table-sensores td{
+	padding: 10px;
+}
+
+.nav-tabs {
+	border: none;
+	margin: 10px 20px;
+}
+
+.nav-tabs li{
+	font-weight: bold;
+	padding: 15px;
+	
+}
+
+.nav-tabs li a{
+	color: black;
+}
+
+.nav-tabs li.active{
+	background-color: #a6d6bd;
+	border-radius: 5px;
+}
+
+.tab-pane h3{
+	margin: 10px 30px;
+}
